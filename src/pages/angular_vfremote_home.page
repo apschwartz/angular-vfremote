@@ -1,0 +1,7 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
+
+	
+
+	<!--div>Angular seed - with VF Remoting - app: v<span app-version=""></span></div-->
+
+</apex:page>

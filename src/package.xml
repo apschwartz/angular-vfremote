@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>angular_vfremote_Ctrlr</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>angular_vfremote_home</members>
+		<members>angular_vfremote_index</members>
+		<members>angular_vfremote_partial1</members>
+		<members>angular_vfremote_partial2</members>
+		<members>angular_vsremote_index</members>
+		<name>ApexPage</name>
+	</types>
+	<types>
+		<members>angular_vfremote</members>
+		<name>StaticResource</name>
+	</types>
+	<version>25.0</version>
+</Package>
