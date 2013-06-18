@@ -2,60 +2,60 @@
 		   sidebar="false" 
 		   standardStylesheets="false"
 		   controller="angular_vfremote_Ctrlr">
-<html ng-app="angvfr">
-    
-<head>
-	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet" />
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="//code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js"></script>
+	<html ng-app="angvfr">
+	    
+		<head>
+			<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet" />
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+			<script src="//code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+			<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js"></script>
 
-	<apex:stylesheet value="{!URLFOR($Resource.angular_vfremote, 'app/css/app.css')}"/>
-	<script src="{!URLFOR($Resource.angular_vfremote, 'app/js/controllers.js')}"></script>
-	<script src="{!URLFOR($Resource.angular_vfremote, 'app/js/directives.js')}"></script>
-	<script src="{!URLFOR($Resource.angular_vfremote, 'app/js/filters.js')}"></script>
-	<script src="{!URLFOR($Resource.angular_vfremote, 'app/js/services.js')}"></script>
-	<script src="{!URLFOR($Resource.angular_vfremote, 'app/js/app.js')}"></script>
+			<apex:stylesheet value="{!URLFOR($Resource.angular_vfremote, 'app/css/app.css')}"/>
+			<script src="{!URLFOR($Resource.angular_vfremote, 'app/js/controllers.js')}"></script>
+			<script src="{!URLFOR($Resource.angular_vfremote, 'app/js/directives.js')}"></script>
+			<script src="{!URLFOR($Resource.angular_vfremote, 'app/js/filters.js')}"></script>
+			<script src="{!URLFOR($Resource.angular_vfremote, 'app/js/services.js')}"></script>
+			<script src="{!URLFOR($Resource.angular_vfremote, 'app/js/app.js')}"></script>
 
-<script>
-myModule.
-	factory('myFactory', ['$q', '$rootScope', function($q, $rootScope) {
+		<script>
+			myModule.
+				factory('doubleMe', ['$q', '$rootScope', function($q, $rootScope) {
 
-		return function(name) {
-			var deferred = $q.defer();
+					return function(name) {
+						var deferred = $q.defer();
 
-			Visualforce.remoting.Manager.invokeAction(
-				'{!$RemoteAction.angular_vfremote_Ctrlr.myMethod}',
-				name, 
-				function(result, event) {
-					$rootScope.$apply(function() {
-					  if (event) {
-					    deferred.resolve(result);
-					  } else {
-					    deferred.reject('bad result: ' + result);
-					  }
-					})
-				},
-				{ buffer: true, escape: true, timeout: 30000 }
-			);
+						Visualforce.remoting.Manager.invokeAction(
+							'{!$RemoteAction.angular_vfremote_Ctrlr.valueDoubler}',
+							name, 
+							function(result, event) {
+								$rootScope.$apply(function() {
+								  if (event.status) {
+								    deferred.resolve(result);
+								  } else {
+								    deferred.reject(event);
+								  }
+								})
+							},
+							{ buffer: true, escape: true, timeout: 30000 }
+						);
 
-			return deferred.promise;
-		}
+						return deferred.promise;
+					}
 
-}]);
-</script>
+				}]);
+		</script>
 
-</head>
-<body>
-	<meta name="viewport" content="width=device-width, initial-scale=1"/> 
- <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+		</head>
+		<body>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+			<ul class="menu">
+				<li><a href="#/view1">view1</a></li>
+			    <li><a href="#/view2">view2</a></li>
+			</ul>
 
-    <div class="container">
-        <div class="ng-view"></div>
-    </div>
-</body>
-</html>
+		    <div class="container">
+		        <div class="ng-view"></div>
+		    </div>
+		</body>
+	</html>
 </apex:page>

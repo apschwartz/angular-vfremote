@@ -1,19 +1,23 @@
 <apex:page showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
 	<p>This is the partial for view 1.</p>
+	<p><b>Double Me!</b> ("Double" the input)</p>
 
-<p> Apex-processed output: {{sfdcResult}}</p>
-<form>
-	<div data-role="fieldcontain" >
-	    <label for="realtime">Real-time SFDC Action:</label>
-	    <input type="text" name="realtime" id="realtime" value="" ng-model="inputString" ng-change="askSFDC(inputString)"/>
-	</div>	
+	<p><b> Result: {{sfdcResult}}</b></p>
+	<form>
+		<div data-role="fieldcontain" >
+		    <label for="realtime">Real-time Action:</label>
+		    <input type="text" name="realtime" id="realtime" value="" ng-model="inputString" ng-change="askSFDC(inputString)"/>
+		</div>	
 
 
-	<div data-role="fieldcontain">
-	    <label for="click">Click SFDC Action:</label>
-	    <input type="text" name="click" id="click" value="" ng-model="inputString2"/>
-	    <button data-role="button" data-inline="true" ng-click="askSFDC(inputString2)">Click me</button>
-	</div>	
-</form>
+		<div data-role="fieldcontain">
+		    <label for="click">Click Action:</label>
+		    <input type="text" name="click" id="click" value="" ng-model="inputString2"/>
+		    <button data-role="button" data-inline="true" ng-click="askSFDC(inputString2)">Click me</button>
+		</div>	
+	</form>
+
+	<p>Example: Input: 10 &nbsp; Output: {{example1}}
+	<br/>Example: Input: ten &nbsp; Output: {{example2}}</p>
 
 </apex:page>
