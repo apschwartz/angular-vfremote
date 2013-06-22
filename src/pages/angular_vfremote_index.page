@@ -5,7 +5,8 @@
 	<html ng-app="angvfr">
 	    
 		<head>
-			<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet" />
+			<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" 
+				  rel="stylesheet" />
 			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 			<script src="//code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 			<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js"></script>
@@ -21,12 +22,12 @@
 			myModule.
 				factory('doubleMe', ['$q', '$rootScope', function($q, $rootScope) {
 
-					return function(name) {
+					return function(inputString) {
 						var deferred = $q.defer();
 
 						Visualforce.remoting.Manager.invokeAction(
 							'{!$RemoteAction.angular_vfremote_Ctrlr.valueDoubler}',
-							name, 
+							inputString, 
 							function(result, event) {
 								$rootScope.$apply(function() {
 								  if (event.status) {

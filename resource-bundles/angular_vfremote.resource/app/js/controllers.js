@@ -14,8 +14,8 @@ myModule
 
   	$scope.askSFDC = function(input){
   		doubleMe(input).then(function(result) {$scope.sfdcResult = result;},
-  					 		 function(error)  {$scope.sfdcResult = 'ERROR: ' + error.message;}
-  							 )
+                           function(error)  {$scope.sfdcResult = 'ERROR: ' + error.message;}
+  							          )
   	};
  
 
