@@ -19,6 +19,7 @@
 			<script src="{!URLFOR($Resource.angular_vfremote, 'app/js/app.js')}"></script>
 
 		<script>
+			// Create angular factory that defines service to call apex.
 			myModule.
 				factory('doubleMe', ['$q', '$rootScope', function($q, $rootScope) {
 
@@ -44,6 +45,11 @@
 					}
 
 				}]);
+
+			// Remember site prefix, if any, to support direct (logged-in) or Site-based usage.
+			// Applies to Angular $routeProvider.
+			var sitePrefix = '{!$Site.Prefix}';
+			if (sitePrefix=='') sitePrefix='/apex';
 		</script>
 
 		</head>

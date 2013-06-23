@@ -1,2 +1,6 @@
 <apex:page showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
+
+	<p>This is a demo of the <a href="https://github.com/angular/angular-seed">Angular-Seed</a> project running in an SFDC environment.</p>
+	<p>Demo page <a href="#/view1">view1</a> has been modified to demonstrate the use of Apex from AngularJS,</p>
+	
 </apex:page>

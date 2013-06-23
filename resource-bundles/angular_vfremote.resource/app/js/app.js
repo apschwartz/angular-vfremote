@@ -10,10 +10,10 @@ var myModule = angular.module('angvfr', ['angvfr.controllers',
 myModule.
   config(['$routeProvider', function($routeProvider) {
     $routeProvider
-    	.when('/',      {templateUrl: 'apex/angular_vfremote_home'})
-    	.when('/view1', {templateUrl: 'apex/angular_vfremote_partial1', 
+    	.when('/',      {templateUrl: sitePrefix+'/angular_vfremote_home', controller: 'MyCtrl1'})
+    	.when('/view1', {templateUrl: sitePrefix+'/angular_vfremote_partial1', 
     					 controller: 'MyCtrl1'})
-    	.when('/view2', {templateUrl: 'apex/angular_vfremote_partial2', 
+    	.when('/view2', {templateUrl: sitePrefix+'/angular_vfremote_partial2', 
     					 controller: 'MyCtrl2'})
     	.otherwise({redirectTo: '/'});
   }]);
