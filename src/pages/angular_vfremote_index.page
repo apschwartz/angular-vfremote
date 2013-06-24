@@ -5,12 +5,18 @@
 	<html ng-app="angvfr">
 	    
 		<head>
+			<!--	Mobile css and libraries.  
+					Not needed for angular-seed.  
+					Possibly useful for something more substantial. -->
 			<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" 
 				  rel="stylesheet" />
 			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 			<script src="//code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+			<!-- Angular library -->
 			<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js"></script>
 
+			<!-- Local Static Resource css and javascript, all part of Angular-Seed app. -->
 			<apex:stylesheet value="{!URLFOR($Resource.angular_vfremote, 'app/css/app.css')}"/>
 			<script src="{!URLFOR($Resource.angular_vfremote, 'app/js/controllers.js')}"></script>
 			<script src="{!URLFOR($Resource.angular_vfremote, 'app/js/directives.js')}"></script>

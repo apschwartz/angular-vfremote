@@ -1,6 +1,6 @@
 <apex:page showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
 	<p>This is the partial for view 1.</p>
-	<p><b>Double Me!</b> ("Double" the input)</p>
+	<p><b>Apex-based app: Double Me!</b> ("Double" the input)</p>
 
 	<p><b> Result: {{sfdcResult}}</b></p>
 	<form>
